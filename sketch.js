@@ -21,7 +21,7 @@ function setup(){
     var canvas = createCanvas(400,600);
     engine = Engine.create();
     world = engine.world;
-Umbrella =new Umbrella(200,400,65)
+    umbrella =new Umbrella(200,400,65)
     bruceWayne = createSprite(200,460)
     bruceWayne.addAnimation("Walking Frame",batman_Walking)
     bruceWayne.scale = 0.4
@@ -29,7 +29,7 @@ Umbrella =new Umbrella(200,400,65)
     thunderBolt = createSprite(200,90)
 
     for(var i=0;i<maxDrops;i++){
-        rainDrop.push(new Rain(random(0,400),random(0,400),5))
+        rainDrop.push(new Drops(random(0,400),random(0,400),5))
     }
     Engine.run(engine)
     
@@ -38,7 +38,6 @@ Umbrella =new Umbrella(200,400,65)
 function draw(){
     background("black")
     Engine.update(engine)
-    cover.display();
     for (var j = 0; j < rainDrop.length; j++) {
         rainDrop[j].display();
         rainDrop[j].update();
